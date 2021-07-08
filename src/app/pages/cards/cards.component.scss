@@ -1,0 +1,122 @@
+@import '../../../styles.scss';
+
+.container{
+  margin: 50px 0px 50px 0px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  grid-auto-rows: auto;
+  gap: 1.5rem;
+}
+
+.card{
+  height: 250px;
+  width: 250px;
+  border: 2px solid #e8e8;
+  display: grid;
+  place-items: center;
+  .card_image{
+   img{
+     height: 150px;
+     width: 150px;
+   }
+   a{
+     cursor:pointer;
+   }
+  }
+  .card_title{
+    p{
+      font-family: 'Exo','Press Start 2P', cursive;
+      cursor: default;
+    }
+  }
+}
+
+.content{
+  margin-top: 20px;
+  display: grid;
+  place-items: center;
+  h3{
+    color: $blackPrimary;
+  }
+}
+
+.search{
+  input{
+    border: none;
+    border-bottom: 1px solid $graySoft;
+    background-color: $whiteSecondary;
+    transition: 0.25s ease-out;
+
+  }
+  input:focus{
+    outline: none;
+    border-color: $purplePrimary;
+    transition: 0.25s ease-out;
+  }
+}
+
+.type_name{
+  font-family: 'Press Start 2P', cursive;
+  .bug{
+    background-color: $bugColor;
+  }
+  .dark{
+    background-color: $darkColor;
+  }
+  .dragon{
+    background-color: $dragonColor;
+  }
+  .electric{
+    background-color: $electricColor;
+  }
+  .fairy{
+    background-color: $fairyColor;
+  }
+  .fighting{
+    background-color: $fightingColor;
+  }
+  .fire{
+    background-color: $fireColor;
+  }
+  .flying{
+    background-color: $flyingColor;
+  }
+  .ghost{
+    background-color: $ghostColor;
+  }
+  .grass{
+    background-color: $grassColor;
+  }
+  .ground{
+    background-color: $groundColor;
+  }
+  .ice{
+    background-color: $iceColor;
+  }
+  .normal{
+    background-color: $normalColor;
+  }
+  .poison{
+    background-color: $poisonColor;
+  }
+  .psychic{
+    background-color: $psychicColor;
+  }
+  .rock{
+    background-color: $rockColor;
+  }
+  .steel{
+    background-color: $steelColor;
+  }
+  .water{
+    background-color: $waterColor;
+  }
+
+}
+
+.card_types{
+  display: flex;
+}
+
+

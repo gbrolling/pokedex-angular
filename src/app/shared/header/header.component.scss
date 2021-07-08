@@ -1,0 +1,21 @@
+@import '../../../styles.scss';
+
+.header{
+  background-color: $purplePrimary;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  a{
+    cursor: pointer;
+  }
+  .home{
+    padding-left: 10px;
+  }
+  .logo{
+    display: grid;
+    place-self: center;
+    padding-right: 30px;
+  }
+  span{
+    color: $whitePrimary;
+  }
+}

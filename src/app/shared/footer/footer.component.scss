@@ -1,0 +1,12 @@
+@import '../../../styles.scss';
+
+.footer{
+  height: 35px;
+  display: grid;
+  place-items: end;
+  background-color: $purplePrimary;
+  p{
+    padding-right: 10px;
+    color: $whitePrimary;
+  }
+}
