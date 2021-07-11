@@ -1,7 +1,102 @@
 @import '../../../styles.scss';
 
 
-//trocar cor do popup
-mat-dialog-container{
-  background-color: black !important;
+@import '../../../styles.scss';
+
+$scaleFactor: 1.1;
+
+.dialog{
+  display: grid;
+  place-items: center;
+}
+
+
+.dialog_card{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  .dialog_card_content{
+    font-family: 'Press Start 2P', cursive;
+  }
+  .dialog_card_image{
+   img{
+    height: 370px;
+    width: 370px;
+   }
+  }
+  .dialog_card_title{
+    p{
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.25rem;
+      cursor: default;
+    }
+  }
+}
+
+.dialog_type_name{
+  font-family: 'Press Start 2P', cursive;
+  p{
+    border-radius: 46px;
+    font-size: 0.7rem;
+  }
+  .bug{
+    background-color: $bugColor;
+  }
+  .dark{
+    background-color: $darkColor;
+  }
+  .dragon{
+    background-color: $dragonColor;
+  }
+  .electric{
+    background-color: $electricColor;
+  }
+  .fairy{
+    background-color: $fairyColor;
+  }
+  .fighting{
+    background-color: $fightingColor;
+  }
+  .fire{
+    background-color: $fireColor;
+  }
+  .flying{
+    background-color: $flyingColor;
+  }
+  .ghost{
+    background-color: $ghostColor;
+  }
+  .grass{
+    background-color: $grassColor;
+  }
+  .ground{
+    background-color: $groundColor;
+  }
+  .ice{
+    background-color: $iceColor;
+  }
+  .normal{
+    background-color: $normalColor;
+  }
+  .poison{
+    background-color: $poisonColor;
+  }
+  .psychic{
+    background-color: $psychicColor;
+  }
+  .rock{
+    background-color: $rockColor;
+  }
+  .steel{
+    background-color: $steelColor;
+  }
+  .water{
+    background-color: $waterColor;
+  }
+
+}
+
+.dialog_card_types{
+  display: flex;
 }

@@ -1,7 +1,6 @@
 import { Component, Inject, Input} from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { Pokemon } from 'src/app/models/pokemon.model';
-import { PokemonDescription } from 'src/app/models/pokemon.description.model';
+/* import { Pokemon } from 'src/app/models/pokemon.model'; */
 
 
 
@@ -15,7 +14,7 @@ export class PokemonPopupComponent{
 
   constructor(
     public dialogRef: MatDialogRef<PokemonPopupComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Pokemon,
+    @Inject(MAT_DIALOG_DATA) public data,
    ){}
 
    onNoClick(): void{

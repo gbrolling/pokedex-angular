@@ -32,7 +32,7 @@ export function playerFactory() {
     BrowserAnimationsModule,
     HttpClientModule,
     MatDialogModule,
-    LottieModule.forRoot({ player: playerFactory, useCache: true })
+    LottieModule.forRoot({ player: playerFactory/*  useCache: true  */})
 
   ],
   providers: [],

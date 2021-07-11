@@ -1,25 +1,22 @@
-<div class="container" *ngIf="data">
-  <div class="card">
-
-    <div class="card_title">
-      <p>{{data?.name}} #{{ data?.number }}</p>
-      <p></p>
+<div class="dialog" *ngIf="data">
+  <div class="dialog_card">
+    <div class="dialog_card_title">
+      <p>{{ data?.pokemon.name }} #{{ data?.pokemon.number }}</p>
     </div>
 
-    <div class="card_image">
-      <img src="{{ data?.image }}"/>
+    <div class="dialog_card_image">
+      <img src="{{ data?.pokemon.image }}" />
     </div>
 
-    <div class="card_types" >
-      <div class="type_name">
-        <p [ngClass]="data?.type[0]">{{ data?.type[0] }}</p>
+    <div class="dialog_card_types">
+      <div class="dialog_type_name">
+        <p [ngClass]="data?.pokemon.type[0]">{{ data?.pokemon.type[0] }}</p>
       </div>
-      <ng-container *ngIf="data?.type.length > 1">
-        <div class="type_name">
-          <p [ngClass]="data?.type[1]">{{ data?.type[1] }}</p>
+      <ng-container *ngIf="data.pokemon.type.length > 1">
+        <div class="dialog_type_name">
+          <p [ngClass]="data?.pokemon.type[1]">{{ data?.pokemon.type[1] }}</p>
         </div>
       </ng-container>
     </div>
-
   </div>
 </div>

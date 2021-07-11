@@ -1,12 +1,13 @@
 export interface Pokemon{
-  image: string;
-  number: number;
-  name: string;
-  type: string;
-  height: number;
-  ability: string;
-  stats: any;
+  image?: string;
+  number?: number;
+  name?: string;
+  type?: string;
+  height?: number;
+  ability?: string;
+  stats?: any;
   description?: string;
+  species?: string;
 
   //descrição do pokemon
   //versão M/F

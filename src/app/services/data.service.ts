@@ -7,17 +7,23 @@ import { Pokemon } from '../models/pokemon.model';
 })
 export class DataService {
   public url = 'https://pokeapi.co/api/v2';
+  public pokemons: Pokemon[] = [];
+
   constructor(private http: HttpClient) {}
 
   getPokemon() {
     return this.http.get(`${this.url}/pokemon?limit=151`);
   }
 
-  getSpecificPokemon(name) {
-    return this.http.get(`${this.url}/pokemon/${name}`);
+  getSpecificPokemon(pokUrl) {
+    return this.http.get(pokUrl);
   }
 
-  getPokemonDescription(name) {
-    return this.http.get(`${this.url}/pokemon-species/${name}`);
+  getPokemonDescription(pokUrl) {
+    return this.http.get(pokUrl);
+  }
+
+  getPokemonDescriptionTest(pokName) {
+    return this.http.get(`${this.url}/pokemon-species/${pokName}`);
   }
 }

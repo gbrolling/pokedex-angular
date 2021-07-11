@@ -4,8 +4,30 @@
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+mat-dialog-container{
+  background-color: $whitePrimary !important;
+}
+
+::-webkit-scrollbar{
+  width: 4px;
+  height: 4px;
+  }
+  ::-webkit-scrollbar-thumb{
+  background: #A25C7E;
+  border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+  background: #A25C7E;
+  }
+  ::-webkit-scrollbar-track{
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: inset 10px 10px 12px 0px #FFFFFF;
+  }

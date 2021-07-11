@@ -1,5 +1,7 @@
 @import '../../../styles.scss';
 
+$scaleFactor: 1.1;
+
 .container{
   margin: 50px 0px 50px 0px;
   display: grid;
@@ -7,18 +9,26 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   grid-auto-rows: auto;
   gap: 1.5rem;
+  :hover{
+    transform: scale($scaleFactor);
+  }
 }
+
 
 .card{
   height: 250px;
   width: 250px;
-  border: 2px solid #e8e8;
   display: grid;
   place-items: center;
+  .card_content{
+    font-family: 'Press Start 2P', cursive;
+    pointer-events: none;
+  }
   .card_image{
+    pointer-events: none;
    img{
-     height: 150px;
-     width: 150px;
+    height: 150px;
+    width: 150px;
    }
    a{
      cursor:pointer;
@@ -26,10 +36,15 @@
   }
   .card_title{
     p{
-      font-family: 'Exo','Press Start 2P', cursive;
+      pointer-events: none;
+      font-family: 'Press Start 2P', cursive;
       cursor: default;
     }
   }
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15),
+  0 2px 2px rgba(0,0,0,0.15),
+  0 4px 4px rgba(0,0,0,0.15),
+  0 8px 8px rgba(0,0,0,0.15);
 }
 
 .content{
@@ -41,23 +56,14 @@
   }
 }
 
-.search{
-  input{
-    border: none;
-    border-bottom: 1px solid $graySoft;
-    background-color: $whiteSecondary;
-    transition: 0.25s ease-out;
-
-  }
-  input:focus{
-    outline: none;
-    border-color: $purplePrimary;
-    transition: 0.25s ease-out;
-  }
-}
 
 .type_name{
   font-family: 'Press Start 2P', cursive;
+  pointer-events: none;
+  p{
+    border-radius: 46px;
+    font-size: 0.7rem;
+  }
   .bug{
     background-color: $bugColor;
   }
@@ -116,7 +122,6 @@
 }
 
 .card_types{
+  pointer-events: none;
   display: flex;
 }
-
-

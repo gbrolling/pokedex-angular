@@ -1,5 +1,4 @@
 import { CardsComponent } from './pages/cards/cards.component';
-import { ContentComponent } from './pages/content/content.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
