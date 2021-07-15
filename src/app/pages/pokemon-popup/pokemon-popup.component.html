@@ -1,22 +1,21 @@
-<div class="dialog" *ngIf="data">
+<div class="dialog" *ngIf="data" [ngClass]="data?.pokemon?.type[0]">
   <div class="dialog_card">
     <div class="dialog_card_title">
-      <p>{{ data?.pokemon.name }} #{{ data?.pokemon.number }}</p>
+      <p>{{ upperCase(data?.pokemonDescription?.name)}}</p>
     </div>
-
     <div class="dialog_card_image">
-      <img src="{{ data?.pokemon.image }}" />
+      <!-- <img src="{{data?.pokemon?.image.front_default}}" alt="Male/Female"> -->
+      <img src="{{returnImage(data.pokemon)}}" alt="Male/Female">
     </div>
-
-    <div class="dialog_card_types">
-      <div class="dialog_type_name">
-        <p [ngClass]="data?.pokemon.type[0]">{{ data?.pokemon.type[0] }}</p>
-      </div>
-      <ng-container *ngIf="data.pokemon.type.length > 1">
-        <div class="dialog_type_name">
-          <p [ngClass]="data?.pokemon.type[1]">{{ data?.pokemon.type[1] }}</p>
-        </div>
-      </ng-container>
+    <div class="dialog_card_text">
+      <p>Pokedex Number: {{data?.pokemon?.number}}</p>
+      <p>Height: {{data?.pokemon?.height/10}}m</p>
+      <p>Weight: {{data?.pokemon?.weight/10}}kg</p>
+      <p>Habitat: {{upperCase(data?.pokemonDescription?.habitat.name)}}</p>
+      <p>Shape: {{upperCase(data?.pokemonDescription?.shape.name)}}</p>
+      <p>Description: {{data?.pokemonDescription?.genera[7].genus}}</p>
+      <p>Flavor Text:{{data?.pokemonDescription?.flavor_text_entries[1].flavor_text}}</p>
     </div>
   </div>
 </div>
+

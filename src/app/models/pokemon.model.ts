@@ -4,6 +4,7 @@ export interface Pokemon{
   name?: string;
   type?: string;
   height?: number;
+  weight?: number;
   ability?: string;
   stats?: any;
   description?: string;

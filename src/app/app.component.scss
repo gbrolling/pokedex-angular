@@ -12,7 +12,7 @@ app-footer{
 }
 
 .container{
-  background-color: $whitePrimary;
+  background-image: url(../assets/images/pattern.png);
   min-height: 100%;
   display: grid;
   grid-template-rows: auto auto 1fr auto;

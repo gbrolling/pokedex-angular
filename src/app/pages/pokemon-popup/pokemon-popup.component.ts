@@ -11,7 +11,6 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class PokemonPopupComponent{
 
-
   constructor(
     public dialogRef: MatDialogRef<PokemonPopupComponent>,
     @Inject(MAT_DIALOG_DATA) public data,
@@ -19,6 +18,17 @@ export class PokemonPopupComponent{
 
    onNoClick(): void{
      this.dialogRef.close()
+    }
+
+    ngOnInit(){
+    }
+
+    upperCase(string){
+      return string.charAt(0).toUpperCase(0) + string.slice(1);
+    }
+
+    returnImage(pokeImage){
+      return pokeImage.image.other['official-artwork'].front_default;
     }
 
 }

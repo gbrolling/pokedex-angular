@@ -1,13 +1,11 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pokemon } from '../models/pokemon.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
   public url = 'https://pokeapi.co/api/v2';
-  public pokemons: Pokemon[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -19,11 +17,8 @@ export class DataService {
     return this.http.get(pokUrl);
   }
 
-  getPokemonDescription(pokUrl) {
-    return this.http.get(pokUrl);
+  getPokemonDescription(number) {
+    return this.http.get(`${this.url}/pokemon-species/${number}`);
   }
 
-  getPokemonDescriptionTest(pokName) {
-    return this.http.get(`${this.url}/pokemon-species/${pokName}`);
-  }
 }

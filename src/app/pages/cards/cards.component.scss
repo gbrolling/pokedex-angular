@@ -1,127 +1,142 @@
-@import '../../../styles.scss';
+@import "../../../styles.scss";
 
 $scaleFactor: 1.1;
 
-.container{
+.container {
   margin: 50px 0px 50px 0px;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   grid-auto-rows: auto;
   gap: 1.5rem;
-  :hover{
+  :hover {
     transform: scale($scaleFactor);
   }
 }
 
-
-.card{
-  height: 250px;
-  width: 250px;
-  display: grid;
-  place-items: center;
-  .card_content{
-    font-family: 'Press Start 2P', cursive;
+.card {
+  background: linear-gradient(180deg, $redPrimary 46%,  $blackSecondary 46%, $blackSecondary 52%, #f9f9f9 52%);
+  height: 300px;
+  width: 300px;
+  .card_box {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 30px 157px 50px;
+    padding: 45px 0 16px 0;
+  }
+  .card_content {
+    font-family: "Press Start 2P", cursive;
     pointer-events: none;
   }
-  .card_image{
+  .card_image {
     pointer-events: none;
-   img{
-    height: 150px;
-    width: 150px;
-   }
-   a{
-     cursor:pointer;
-   }
+    img {
+      height: 150px;
+      width: 150px;
+    }
+    a {
+      cursor: pointer;
+    }
   }
-  .card_title{
-    p{
+  .card_title {
+    p {
       pointer-events: none;
-      font-family: 'Press Start 2P', cursive;
+      font-family: "Press Start 2P", cursive;
       cursor: default;
     }
   }
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15),
-  0 2px 2px rgba(0,0,0,0.15),
-  0 4px 4px rgba(0,0,0,0.15),
-  0 8px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 1px rgb(0 0 0 / 15%), 0 2px 2px rgb(0 0 0 / 15%), 0 4px 4px rgb(0 0 0 / 15%),
+    0 8px 8px rgb(0 0 0 / 15%);
+  border-radius: 50%;
 }
 
-.content{
+.content {
   margin-top: 20px;
   display: grid;
   place-items: center;
-  h3{
+  h3 {
     color: $blackPrimary;
   }
 }
 
-
-.type_name{
-  font-family: 'Press Start 2P', cursive;
+.type_name {
+  font-family: "Press Start 2P", cursive;
   pointer-events: none;
-  p{
+  p {
+    padding: 0 5px;
     border-radius: 46px;
     font-size: 0.7rem;
   }
-  .bug{
+  .bug {
     background-color: $bugColor;
   }
-  .dark{
+  .dark {
     background-color: $darkColor;
   }
-  .dragon{
+  .dragon {
     background-color: $dragonColor;
   }
-  .electric{
+  .electric {
     background-color: $electricColor;
   }
-  .fairy{
+  .fairy {
     background-color: $fairyColor;
   }
-  .fighting{
+  .fighting {
     background-color: $fightingColor;
+    color: $whitePrimary;
   }
-  .fire{
+  .fire {
     background-color: $fireColor;
   }
-  .flying{
+  .flying {
     background-color: $flyingColor;
   }
-  .ghost{
+  .ghost {
     background-color: $ghostColor;
+    color: $whitePrimary;
   }
-  .grass{
+  .grass {
     background-color: $grassColor;
   }
-  .ground{
+  .ground {
     background-color: $groundColor;
   }
-  .ice{
+  .ice {
     background-color: $iceColor;
   }
-  .normal{
+  .normal {
     background-color: $normalColor;
   }
-  .poison{
+  .poison {
     background-color: $poisonColor;
+    color: $whitePrimary;
   }
-  .psychic{
+  .psychic {
     background-color: $psychicColor;
   }
-  .rock{
+  .rock {
     background-color: $rockColor;
   }
-  .steel{
+  .steel {
     background-color: $steelColor;
   }
-  .water{
+  .water {
     background-color: $waterColor;
   }
-
 }
 
-.card_types{
+.card_types {
   pointer-events: none;
   display: flex;
+}
+
+.loading {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #0000008f;
+  top: 0;
 }

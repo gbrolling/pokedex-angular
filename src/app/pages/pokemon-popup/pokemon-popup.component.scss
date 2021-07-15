@@ -1,14 +1,20 @@
 @import '../../../styles.scss';
 
-
-@import '../../../styles.scss';
-
 $scaleFactor: 1.1;
 
 .dialog{
   display: grid;
   place-items: center;
+  height: 100%;
+  width: 100%;
+  font-family: 'Press Start 2P', cursive;
+
 }
+
+.background{
+  background-color: blue;
+}
+
 
 
 .dialog_card{
@@ -16,87 +22,120 @@ $scaleFactor: 1.1;
   width: 100%;
   display: grid;
   place-items: center;
-  .dialog_card_content{
-    font-family: 'Press Start 2P', cursive;
-  }
-  .dialog_card_image{
-   img{
-    height: 370px;
-    width: 370px;
-   }
-  }
+  grid-template-rows: 60px 45% 45%;
   .dialog_card_title{
+    display: grid;
+    padding: 25px 0px 0px 0px;
     p{
-      font-family: 'Press Start 2P', cursive;
-      font-size: 1.25rem;
-      cursor: default;
+      font-size: 1.35rem;
     }
   }
+  .dialog_card_image{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   img{
+    height: 350px;
+    width: 350px;
+   }
+  }
+  .dialog_card_text{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0px 25px 0px 25px;
+  }
 }
 
-.dialog_type_name{
-  font-family: 'Press Start 2P', cursive;
-  p{
-    border-radius: 46px;
-    font-size: 0.7rem;
-  }
-  .bug{
-    background-color: $bugColor;
-  }
-  .dark{
-    background-color: $darkColor;
-  }
-  .dragon{
-    background-color: $dragonColor;
-  }
-  .electric{
-    background-color: $electricColor;
-  }
-  .fairy{
-    background-color: $fairyColor;
-  }
-  .fighting{
-    background-color: $fightingColor;
-  }
-  .fire{
-    background-color: $fireColor;
-  }
-  .flying{
-    background-color: $flyingColor;
-  }
-  .ghost{
-    background-color: $ghostColor;
-  }
-  .grass{
-    background-color: $grassColor;
-  }
-  .ground{
-    background-color: $groundColor;
-  }
-  .ice{
-    background-color: $iceColor;
-  }
-  .normal{
-    background-color: $normalColor;
-  }
-  .poison{
-    background-color: $poisonColor;
-  }
-  .psychic{
-    background-color: $psychicColor;
-  }
-  .rock{
-    background-color: $rockColor;
-  }
-  .steel{
-    background-color: $steelColor;
-  }
-  .water{
-    background-color: $waterColor;
-  }
+ .normal{
+  background-image: url(../../../assets/images/normal_type.svg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+
+}
+.fire{
+  background-image: url(../../../assets/images/fire_type.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: $whiteSecondary;
+}
+.water{
+  background-image: url(../../../assets/images/water_type.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 
 }
 
-.dialog_card_types{
-  display: flex;
+.grass{
+  background-image: url(../../../assets/images/grass_type.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
+
+.bug{
+  background-image: url(../../../assets/images/bug_type.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: $whiteSecondary;
+}
+/*
+.bug{
+  background-color: $bugColor;
+}
+.dark{
+  background-color: $darkColor;
+}
+.dragon{
+  background-color: $dragonColor;
+}
+.electric{
+  background-color: $electricColor;
+}
+.fairy{
+  background-color: $fairyColor;
+}
+.fighting{
+  background-color: $fightingColor;
+  color: $whitePrimary;
+}
+.fire{
+  background-color: $fireColor;
+}
+.flying{
+  background-color: $flyingColor;
+}
+.ghost{
+  background-color: $ghostColor;
+  color: $whitePrimary;
+}
+.grass{
+  background-color: $grassColor;
+}
+.ground{
+  background-color: $groundColor;
+}
+.ice{
+  background-color: $iceColor;
+}
+.normal{
+  background-color: $normalColor;
+}
+.poison{
+  background-color: $poisonColor;
+  color: $whitePrimary;
+}
+.psychic{
+  background-color: $psychicColor;
+}
+.rock{
+  background-color: $rockColor;
+}
+.steel{
+  background-color: $steelColor;
+}
+.water{
+  background-color: $waterColor;
+}
+ */

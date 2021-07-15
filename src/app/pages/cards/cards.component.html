@@ -3,29 +3,37 @@
   <h1>Pokemons da 1º geração</h1>
 </div>
 
-<div class="container" *ngIf="pokemons">
+<div class="container" *ngIf="isDataAvailable">
   <div
     class="card"
     (click)="openPokemon(pokemon)"
     *ngFor="let pokemon of pokemons | slice: 1"
   >
-    <div class="card_content">
-      <p>{{ pokemon?.name }} #{{ pokemon?.number }}</p>
-    </div>
-    <div class="card_image">
-      <a><img src="{{ pokemon?.image }}" /></a>
-    </div>
-
-    <div class="card_types">
-      <div class="type_name">
-        <p [ngClass]="pokemon?.type[0]">{{ pokemon?.type[0] }}</p>
+    <div class="card_box">
+      <div class="card_content">
+        <span>{{ pokemon?.name }} #{{ pokemon?.number }}</span>
       </div>
-      <ng-container *ngIf="pokemon?.type.length > 1">
-        /
+      <div class="card_image">
+        <a><img src="{{ pokemon?.image.other.dream_world.front_default }}" *ngIf="pokemon?.image"/></a>
+      </div>
+
+      <div class="card_types">
         <div class="type_name">
-          <p [ngClass]="pokemon?.type[1]">{{ pokemon?.type[1] }}</p>
+          <p [ngClass]="pokemon?.type[0]">{{ pokemon?.type[0] }}</p>
         </div>
-      </ng-container>
+        <ng-container *ngIf="pokemon?.type.length > 1">
+          <div class="type_name">
+            <p [ngClass]="pokemon?.type[1]">{{ pokemon?.type[1] }}</p>
+          </div>
+        </ng-container>
+      </div>
     </div>
+  </div>
+</div>
+
+
+<div class="loading" *ngIf="loading">
+  <div class="loading_animation">
+    <img src="../../../assets/images/loading2.gif">
   </div>
 </div>

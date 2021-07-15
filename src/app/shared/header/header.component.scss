@@ -1,9 +1,9 @@
 @import '../../../styles.scss';
 
 .header{
-  background-color: $purplePrimary;
+  background-color: $blackSecondary;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
   a{
     cursor: pointer;
   }
@@ -13,7 +13,6 @@
   .logo{
     display: grid;
     place-self: center;
-    padding-right: 30px;
   }
   span{
     color: $whitePrimary;

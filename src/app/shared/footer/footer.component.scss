@@ -4,9 +4,13 @@
   height: 35px;
   display: grid;
   place-items: end;
-  background-color: $purplePrimary;
+  background-color: $blackSecondary;
   p{
     padding-right: 10px;
     color: $whitePrimary;
+  }
+  a{
+    text-decoration: none;
+    color: $whitePrimary !important;
   }
 }

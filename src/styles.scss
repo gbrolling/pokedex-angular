@@ -11,8 +11,8 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-mat-dialog-container{
-  background-color: $whitePrimary !important;
+.header{
+  z-index: 10;
 }
 
 ::-webkit-scrollbar{
@@ -20,14 +20,18 @@ mat-dialog-container{
   height: 4px;
   }
   ::-webkit-scrollbar-thumb{
-  background: #A25C7E;
+  background: $redPrimary;
   border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover{
-  background: #A25C7E;
+  background: $redPrimary;
   }
   ::-webkit-scrollbar-track{
-  background: #FFFFFF;
+  background: $whitePrimary;
   border-radius: 10px;
-  box-shadow: inset 10px 10px 12px 0px #FFFFFF;
+  box-shadow: inset 10px 10px 12px 0px $whitePrimary;
   }
+
+mat-dialog-container{
+  padding: 0 !important;
+}
