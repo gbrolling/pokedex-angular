@@ -1,15 +1,14 @@
 <div class="content">
-  <br />
-  <h1>Pokemons da 1º geração</h1>
+  <h1>Pokémon 1 Gen</h1>
 </div>
 
-<div class="container" *ngIf="isDataAvailable">
+<div class="container" *ngIf="!loading">
   <div
     class="card"
     (click)="openPokemon(pokemon)"
-    *ngFor="let pokemon of pokemons | slice: 1"
+    *ngFor="let pokemon of pokemons | slice: 1 "
   >
-    <div class="card_box">
+    <div class="card_box" >
       <div class="card_content">
         <span>{{ pokemon?.name }} #{{ pokemon?.number }}</span>
       </div>

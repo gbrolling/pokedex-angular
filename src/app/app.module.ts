@@ -10,13 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardsComponent } from './pages/cards/cards.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PokemonPopupComponent } from './pages/pokemon-popup/pokemon-popup.component';
-import { LottieModule } from 'ngx-lottie';
-import { LottieComponent } from './shared/lottie/lottie.component';
-
-
-export function playerFactory() {
-  return import('lottie-web');
-}
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +18,6 @@ export function playerFactory() {
     HeaderComponent,
     CardsComponent,
     PokemonPopupComponent,
-    LottieComponent
   ],
   imports: [
     BrowserModule,
@@ -32,8 +25,7 @@ export function playerFactory() {
     BrowserAnimationsModule,
     HttpClientModule,
     MatDialogModule,
-    LottieModule.forRoot({ player: playerFactory/*  useCache: true  */})
-
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

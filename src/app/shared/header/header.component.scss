@@ -4,6 +4,8 @@
   background-color: $blackSecondary;
   display: grid;
   grid-template-columns: 1fr;
+  position: absolute;
+  width: 100%;
   a{
     cursor: pointer;
   }

@@ -2,8 +2,18 @@
 
 $scaleFactor: 1.1;
 
+
+.content {
+  margin-top: 25px;
+  display: grid;
+  place-items: center;
+  h3 {
+    color: $blackPrimary;
+  }
+}
+
 .container {
-  margin: 50px 0px 50px 0px;
+  margin: 35px 35px 50px 35px;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
@@ -50,14 +60,6 @@ $scaleFactor: 1.1;
   border-radius: 50%;
 }
 
-.content {
-  margin-top: 20px;
-  display: grid;
-  place-items: center;
-  h3 {
-    color: $blackPrimary;
-  }
-}
 
 .type_name {
   font-family: "Press Start 2P", cursive;
