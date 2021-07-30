@@ -9,6 +9,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CardsComponent } from './pages/cards/cards.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+
 import { PokemonPopupComponent } from './pages/pokemon-popup/pokemon-popup.component';
 import { FormsModule } from '@angular/forms';
 @NgModule({
@@ -26,11 +31,12 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatDialogModule,
     FormsModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
-
-
+export class AppModule {}

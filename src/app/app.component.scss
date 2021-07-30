@@ -7,6 +7,7 @@
   height: 100%;
   display: grid;
   grid-template-rows: 24px 1fr 35px;
+  scroll-behavior: smooth !important;
 }
 
 

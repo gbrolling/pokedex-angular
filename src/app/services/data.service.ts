@@ -10,12 +10,12 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  getPokemon() {
-    return this.http.get(`${this.url}/pokemon?limit=151`);
+  getPokemonTeste(generation){
+    return this.http.get(`${this.url}/generation/${generation}`);
   }
 
-  getSpecificPokemon(pokUrl) {
-    return this.http.get(pokUrl);
+  getSpecificPokemon(pokName) {
+    return this.http.get(`${this.url}/pokemon/${pokName}`);
   }
 
   getPokemonDescription(number) {
