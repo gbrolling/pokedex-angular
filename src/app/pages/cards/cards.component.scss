@@ -142,3 +142,23 @@ $scaleFactor: 1.1;
   background: #0000008f;
   top: 0;
 }
+
+
+@media screen and (max-width: 500px){
+  .loading{
+    .loading_animation{
+      img{
+        width: 90%;
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:300px){
+  .card{
+    height: 300px;
+    width: 275px;
+    margin-right: 92px;
+  }
+}

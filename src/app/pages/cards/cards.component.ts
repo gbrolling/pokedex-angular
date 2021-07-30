@@ -41,47 +41,52 @@ export class CardsComponent implements OnInit {
 
   constructor(private pokemonService: DataService, private dialog: MatDialog) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   pokemonGenerationList(inputPokemonGeneration) {
-    if(this.pokemonActualGen !== inputPokemonGeneration){
-    this.pokemonActualGen = inputPokemonGeneration;
-    this.resetAllPokemon();
-    this.loading = true;
-    this.pokemonService.getPokemonTeste(this.pokemonActualGen).subscribe(
-      (response: any) => {
-        response.pokemon_species.forEach((pokemon) => {
-          this.pokemonService
-            .getSpecificPokemon(pokemon.name)
-            .subscribe((uniqResponse: any) => {
-              this.pokemons[uniqResponse.id] = {
-                image: uniqResponse.sprites,
-                number: uniqResponse.id,
-                name: this.upperCase(uniqResponse.name),
-                type: uniqResponse.types.map((typeName) => typeName.type.name),
-                height: uniqResponse.height,
-                weight: uniqResponse.weight,
-                ability: uniqResponse.abilities.map(
-                  (abilityName) => abilityName.ability.name
-                ),
-                stats: uniqResponse.stats,
-                species: uniqResponse.species,
-              };
-            });
-        });
-      },
-      (error: any) => error,
-      () => {
-        setTimeout(() => {
-          this.loading = false;
-        }, 400);
-      }
-    );
+    if (this.pokemonActualGen !== inputPokemonGeneration) {
+      this.loading = true;
+      this.pokemonActualGen = inputPokemonGeneration;
+      this.resetAllPokemon();
+      this.pokemonService.getPokemonTeste(this.pokemonActualGen).subscribe(
+        (response: any) => {
+          this.getDataPokemon(response)
+        },
+        (error: any) => error,
+        () => {
+          console.log('sucesso');
+          setTimeout(() => {
+            this.loading = false;
+          }, 1000);
+        }
+      );
     }else{
 
     }
+  }
+
+  getDataPokemon(response){
+    response.pokemon_species.forEach((pokemon) => {
+      this.pokemonService
+        .getSpecificPokemon(pokemon.name)
+        .subscribe((uniqResponse: any) => {
+          this.pokemons[uniqResponse.id] = {
+            image: uniqResponse.sprites,
+            number: uniqResponse.id,
+            name: this.upperCase(uniqResponse.name),
+            type: uniqResponse.types.map(
+              (typeName) => typeName.type.name
+            ),
+            height: uniqResponse.height,
+            weight: uniqResponse.weight,
+            ability: uniqResponse.abilities.map(
+              (abilityName) => abilityName.ability.name
+            ),
+            stats: uniqResponse.stats,
+            species: uniqResponse.species,
+          };
+        });
+    });
   }
 
   openPokemon(pokemon) {
@@ -97,7 +102,6 @@ export class CardsComponent implements OnInit {
         });
       });
   }
-
 
   resetFilter() {
     this.inputPokemonName = '';

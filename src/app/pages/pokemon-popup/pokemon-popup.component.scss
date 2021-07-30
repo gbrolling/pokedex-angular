@@ -47,40 +47,6 @@ $scaleFactor: 1.1;
   }
 }
 
- .normal{
-  background-image: url(../../../assets/images/normal_type.svg);
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
-
-}
-.fire{
-  background-image: url(../../../assets/images/fire_type.jpg);
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
-  color: $whiteSecondary;
-}
-.water{
-  background-image: url(../../../assets/images/water_type.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}
-
-.grass{
-  background-image: url(../../../assets/images/grass_type.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-.bug{
-  background-image: url(../../../assets/images/bug_type.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  color: $whiteSecondary;
-}
-/*
 .bug{
   background-color: $bugColor;
 }
@@ -138,4 +104,3 @@ $scaleFactor: 1.1;
 .water{
   background-color: $waterColor;
 }
- */

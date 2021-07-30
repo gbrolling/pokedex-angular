@@ -20,11 +20,9 @@
       <button mat-stroked-button (click)="pokemonGenerationList(3)">Gen 3</button>
       <button mat-stroked-button (click)="pokemonGenerationList(4)">Gen 4</button>
       <button mat-stroked-button (click)="pokemonGenerationList(5)">Gen 5</button>
-
     </div>
   </section>
 </div>
-
 
 <div class="container" *ngIf="!inputPokemonName && !inputPokemonType">
   <ng-container *ngFor="let pokemon of pokemons | slice: 1">
