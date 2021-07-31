@@ -48,9 +48,9 @@ export class CardsComponent implements OnInit {
       this.loading = true;
       this.pokemonActualGen = inputPokemonGeneration;
       this.resetAllPokemon();
-      this.pokemonService.getPokemonTeste(this.pokemonActualGen).subscribe(
+      this.pokemonService.getPokemonByGeneration(this.pokemonActualGen).subscribe(
         (response: any) => {
-          this.getDataPokemon(response)
+          this.getPokemonData(response)
         },
         (error: any) => error,
         () => {
@@ -65,11 +65,17 @@ export class CardsComponent implements OnInit {
     }
   }
 
-  getDataPokemon(response){
+  getPokemonData(response){
     response.pokemon_species.forEach((pokemon) => {
-      this.pokemonService
-        .getSpecificPokemon(pokemon.name)
+      this.getSpecificsPokemonData(pokemon.name);
+    });
+  }
+
+  getSpecificsPokemonData(pokemon){
+    this.pokemonService
+        .getSpecificPokemon(pokemon)
         .subscribe((uniqResponse: any) => {
+          console.log(uniqResponse);
           this.pokemons[uniqResponse.id] = {
             image: uniqResponse.sprites,
             number: uniqResponse.id,
@@ -86,7 +92,6 @@ export class CardsComponent implements OnInit {
             species: uniqResponse.species,
           };
         });
-    });
   }
 
   openPokemon(pokemon) {
@@ -100,16 +105,21 @@ export class CardsComponent implements OnInit {
           height: '800px',
           data: { pokemon: pokemon, pokemonDescription: this.pokemonsDetails },
         });
+        console.log(pokeDetail);
       });
+
   }
 
-  resetFilter() {
-    this.inputPokemonName = '';
-    this.inputPokemonType = '';
+  returnImage(pokeImage){
+    return pokeImage.image.other['official-artwork'].front_default;
   }
 
   resetAllPokemon() {
     this.pokemons = [];
+  }
+
+  inputPokemonNameFilter(string){
+    return string.chartAt(0).toUpperCase () + string.slice(1).toLowerCase();
   }
 
   lowerCase(string) {

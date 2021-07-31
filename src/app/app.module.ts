@@ -13,6 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { PokemonPopupComponent } from './pages/pokemon-popup/pokemon-popup.component';
 import { FormsModule } from '@angular/forms';
@@ -35,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

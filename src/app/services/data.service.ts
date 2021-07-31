@@ -10,7 +10,7 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  getPokemonTeste(generation){
+  getPokemonByGeneration(generation){
     return this.http.get(`${this.url}/generation/${generation}`);
   }
 

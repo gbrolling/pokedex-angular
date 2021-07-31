@@ -4,17 +4,16 @@
       <p>{{ upperCase(data?.pokemonDescription?.name)}}</p>
     </div>
     <div class="dialog_card_image">
-      <!-- <img src="{{data?.pokemon?.image.front_default}}" alt="Male/Female"> -->
-      <img src="{{returnImage(data.pokemon)}}" alt="Male/Female">
+      <img src="{{returnImage(data?.pokemon)}}" alt="Male/Female">
     </div>
     <div class="dialog_card_text">
       <p>Pokedex Number: {{data?.pokemon?.number}}</p>
       <p>Height: {{data?.pokemon?.height/10}}m</p>
       <p>Weight: {{data?.pokemon?.weight/10}}kg</p>
-      <p>Habitat: {{upperCase(data?.pokemonDescription?.habitat.name)}}</p>
+      <p  *ngIf="data.pokemonDescription?.pokedex_numbers[0].entry_number < 386">Habitat: {{upperCase(data?.pokemonDescription?.habitat.name)}}</p>
       <p>Shape: {{upperCase(data?.pokemonDescription?.shape.name)}}</p>
       <p>Description: {{data?.pokemonDescription?.genera[7].genus}}</p>
-      <p>Flavor Text: {{data?.pokemonDescription?.flavor_text_entries[1].flavor_text}}</p>
+      <p *ngIf="data?.pokemonDescription?.pokedex_numbers[0].entry_number < 650">Flavor Text: {{data?.pokemonDescription?.flavor_text_entries[1].flavor_text}}</p>
     </div>
   </div>
 </div>

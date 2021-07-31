@@ -1,32 +1,67 @@
 <div class="content">
   <h1>Filtro de Busca</h1>
-    <mat-form-field class="example-full-width">
-      <mat-label>Pokémon Name</mat-label>
-      <input matInput placeholder="Ex. Pikachu" [(ngModel)]="inputPokemonName" name="inputPokemonName">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Pokémon Type</mat-label>
-      <mat-select [(ngModel)]="inputPokemonType" name="inputPokemonType">
-        <mat-option *ngFor="let type of types" [value]="type.id">
-          {{type.name}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  <h2 *ngIf="inputPokemonType">Mostrando pokémons do tipo: <i>{{upperCase(this.inputPokemonType)}}</i></h2>
+  <mat-form-field class="input_poke_name">
+    <mat-label>Pokémon Name</mat-label>
+    <input
+      matInput
+      placeholder="Ex. Pikachu"
+      [(ngModel)]="inputPokemonName"
+      name="inputPokemonName"
+      (ngModelChange)="
+        inputPokemonName =
+          $event.charAt(0).toUpperCase(inputPokemonName) +
+          $event.slice(1).toLowerCase(inputPokemonName)
+      "
+    />
+  </mat-form-field>
+  <mat-form-field class="input_poke_type">
+    <mat-label>Pokémon Type</mat-label>
+    <mat-select [(ngModel)]="inputPokemonType" name="inputPokemonType">
+      <mat-option *ngFor="let type of types" [value]="type.id">
+        {{ type.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h2 *ngIf="inputPokemonType">
+    Mostrando pokémons do tipo: <i>{{ upperCase(this.inputPokemonType) }}</i>
+  </h2>
   <section>
     <div class="example-button-row">
-      <button mat-stroked-button (click)="pokemonGenerationList(1)">Gen 1</button>
-      <button mat-stroked-button (click)="pokemonGenerationList(2)">Gen 2</button>
-      <button mat-stroked-button (click)="pokemonGenerationList(3)">Gen 3</button>
-      <button mat-stroked-button (click)="pokemonGenerationList(4)">Gen 4</button>
-      <button mat-stroked-button (click)="pokemonGenerationList(5)">Gen 5</button>
+      <button mat-stroked-button (click)="pokemonGenerationList(1)">
+        Gen 1
+      </button>
+      <button mat-stroked-button (click)="pokemonGenerationList(2)">
+        Gen 2
+      </button>
+      <button mat-stroked-button (click)="pokemonGenerationList(3)">
+        Gen 3
+      </button>
+      <button mat-stroked-button (click)="pokemonGenerationList(4)">
+        Gen 4
+      </button>
+      <button mat-stroked-button (click)="pokemonGenerationList(5)">
+        Gen 5
+      </button>
+      <button mat-stroked-button (click)="pokemonGenerationList(6)">
+        Gen 6
+      </button>
+      <button mat-stroked-button (click)="pokemonGenerationList(7)">
+        Gen 7
+      </button>
+      <button mat-stroked-button (click)="pokemonGenerationList(8)">
+        Gen 8
+      </button>
     </div>
   </section>
 </div>
 
 <div class="container" *ngIf="!inputPokemonName && !inputPokemonType">
   <ng-container *ngFor="let pokemon of pokemons | slice: 1">
-    <div class="card" (click)="openPokemon(pokemon)" *ngIf="(!loading && pokemon)">
+    <div
+      class="card"
+      (click)="openPokemon(pokemon)"
+      *ngIf="!loading && pokemon"
+    >
       <div class="card_box">
         <div class="card_content">
           <span>{{ pokemon?.name }} #{{ pokemon?.number }}</span>
@@ -34,7 +69,7 @@
         <div class="card_image">
           <a
             ><img
-              src="{{ pokemon?.image.other.dream_world.front_default }}"
+              src="{{ pokemon?.image.other['official-artwork'].front_default }}"
               *ngIf="pokemon?.image"
           /></a>
         </div>
@@ -71,7 +106,7 @@
         <div class="card_image">
           <a
             ><img
-              src="{{ pokemon?.image.other.dream_world.front_default }}"
+              src="{{ pokemon?.image.other['official-artwork'].front_default }}"
               *ngIf="pokemon?.image"
           /></a>
         </div>
@@ -89,8 +124,6 @@
     </div>
   </ng-container>
 </div>
-
-
 
 <div class="loading" *ngIf="loading">
   <div class="loading_animation">
